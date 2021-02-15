@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Media Monks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loader Start-->
+    <div class="loader">
+        <img src="images/loader.png" alt="Loader"/>
+        <span class="loading_text">Patience, Yong Padawan...</span>
+    </div>
+    <!-- Loader End -->
+
+
+    <!-- Slider Area Start -->
+    <div class="bannerarea">
+
+        <div class="sliders">
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 1"/>
+                <span class="banner_caption top_cap">WE ARE B REAKING<br> OUR VOW <br>OF SILENCE</span>
+            </div>
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 2"/>
+                <span class="banner_caption left_cap">TALENT IS GIVEN<br>TRUE SKILLS IS<br>EARNED</span>
+            </div>
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 3"/>
+                <span class="banner_caption left_cap">BE FLEXIBLE TO<br>CHANGED AND STUDRY  IN CONVICTION<br>OF SILENCE</span>
+            </div>
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 4"/>
+                <span class="banner_caption right_cap">USE MANY SKILLS<br>YET WORK AS ONE</span>
+            </div>
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 5"/>
+                <span class="banner_caption right_cap">INDIVIDUAL<br>FLOURISH<br>IF CLUTURE<br>AND WISTOM <br>ARE SHARED</span>
+            </div>
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 6"/>
+                <span class="banner_caption left_cap">TRAIN FOR<br>PERFECTION BUT<br>AIM FOR MORE</span>
+            </div>
+            <div class="item">
+                <img src="./images/banner.jpg" alt="Banner 7"/>
+                <span class="banner_caption right_cap">TAKE PRIDE IN YOUR<br>WORK BUT DO NOT<br>SEEK PRAISE</span>
+            </div>
+        </div>
+
+        <!-- Banner Arrow Navigation -->
+        <div class="banner_nav left" onclick="SliderArrow(-1)" >
+            <img src="images/banner_arrow.png" alt="left arrow">
+        </div>
+
+        <div class="banner_nav right" onclick="SliderArrow(1)">
+            <img src="images/banner_arrow.png" alt="right arrow">
+        </div>
+
+        <img class="footer_logo" src="images/logo.svg" alt="Banner LOGO"/>
+
+    </div>
+    <!-- Slider Area End  -->
+
+    <!-- Script Area Start  -->
+    <script type="text/javascript">
+        setTimeout(() => {
+            document.getElementsByClassName("loader")[0].style.display = "none";
+        }, 2000);
+
+        var slideIndex = 1;
+        NavSlider(slideIndex);
+
+        function SliderArrow(n) {
+            NavSlider(slideIndex += n);
+        }
+        function NavSlider(n) {
+            var i;
+            var x = document.getElementsByClassName("item");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex-1].style.display = "block";
+        }        
+    </script>
+    <!-- Script Area End  -->
+    
+</body>
+</html>
